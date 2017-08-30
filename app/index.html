@@ -6,16 +6,15 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="app.css" />
     <script src="bower_components/angular/angular.js"></script>
-    <script src="app.js"></script>
-  </head>
-  <body ng-controller="EmployeeListController">
+    <script src="app.module.js"></script>
+    <script src="employee-list/employee-list.module.js"></script>
+    <script src="employee-list/employee-list.component.js"></script>
 
-    <ul>
-      <li ng-repeat="emp in employees">
-        <span>{{emp.firstName}}</span>
-        <p>{{emp.lastName}}</p>
-      </li>
-    </ul>
+  </head>
+  <body >
+
+    <!-- Use a custom component to render a list of employees -->
+    <emp-list></emp-list>
 
   </body>
 </html>

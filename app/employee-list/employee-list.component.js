@@ -1,5 +1,6 @@
 'use strict';
-var employees =[
+
+var employees = [
 {
 "userId":"rirani",
 "jobTitleName":"Developer",
@@ -33,11 +34,17 @@ var employees =[
 "phoneNumber":"408-2222222",
 "emailAddress":"tomhanks@gmail.com"
 }
-]
-//Define the 'employeesDirectory' module
-var empDirectoryApp = angular.module('empDirectoryApp',[]);
+];
 
-//Define the 'EmployeeListController' controller on the 'empDirectoryApp' module
-empDirectoryApp.controller('EmployeeListController', function EmployeeListController($scope) {
-  $scope.employees = employees;
-});
+// Register 'employeeList' component, along with its associated controller
+//and template
+
+angular.
+  module('empList').
+    component('empList', {
+      templateUrl: 'employee-list/employee-list.template.html',
+      controller: function EmpListController() {
+        this.employees = employees;
+      }
+
+    });
